@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\SportsController::class, 'create'])->name('create');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/home',[App\Http\Controllers\SportsController::class, 'create'])->name('create');
 Route::post('/sports', [App\Http\Controllers\SportsController::class, 'store'])->name('store');
 Route::get('/sports', [App\Http\Controllers\SportsController::class, 'show'])->name('show');

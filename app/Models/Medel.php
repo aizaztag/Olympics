@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sport extends Model
+class Medel extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,6 @@ class Sport extends Model
 
     public function countries()
     {
-        return $this->belongsToMany(Country::class)->withPivot('position');
+        return $this->belongsToMany(Country::class , 'country_medel');
     }
-
 }
